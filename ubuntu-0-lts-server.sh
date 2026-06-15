@@ -2,6 +2,7 @@
 . ./00-config.sh
 
 readonly path="rsync://mirror.freedif.org/ubuntu-releases"
+
 lts_version="$(list "$path" |
 	awk '{print $NF}' |
 	grep -- 24 |
