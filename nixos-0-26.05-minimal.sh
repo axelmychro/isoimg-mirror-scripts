@@ -1,11 +1,6 @@
 #!/bin/sh
-. ./00-config.sh
+set -eux
 
-readonly path='https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso'
-
-readonly src="$path"
-log "$src"
-
+readonly src='https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso'
 readonly out='nixos-26.05-minimal.iso'
-
-wget -- "$src" -o "$out"
+curl -L "$src" -o "$out"
